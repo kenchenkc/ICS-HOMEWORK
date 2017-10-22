@@ -1,12 +1,18 @@
-var height : real
-var answer : string
 put "Question 3:"
-put "Enter any height: " ..
-get height
-put "Is this height inches or centimetres? " ..
-get answer
-if answer = "Centimetres" or answer = "centimetres" then
-    put "The number of inches is ", height / 2.54, "."
-elsif answer = "Inches" or answer = "inches" then
-    put "The number of centimetres is ", height * 2.54, "."
-end if
+var height : real
+var answer : int
+loop
+    put "Enter any height (Enter '0' when done): " ..
+    get height
+    exit when height = 0
+    put "Is this height inches (1) or centimetres (2)? " ..
+    get answer
+    if answer = 2 then
+	put "Your height is ", height, " cm, and the inches as your height is ", height / 2.54, ", and in feet is ", height / 30.48, "." 
+    elsif answer = 1 then
+	put "Your height is ", height, " inches, and the centimetres as your height is ", height * 2.54, ", and in feet is ", height / 12, "."
+    elsif answer not= 1 and answer not= 2 then
+	put "Invalid."
+    end if
+end loop
+
