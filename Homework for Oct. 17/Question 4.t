@@ -1,14 +1,20 @@
 const MULTIPLY := 10
-var answer : int
+var answer : string
+var answer2 : int
 put "Question 4:"
-put "Enter any integer to find the times table for it: " ..
-get answer
-if answer > 10 then
-    for count : 0 .. MULTIPLY
-	put count * answer, "   " ..
-    end for
-else
-    for count : 0 .. answer
-	put count * answer, "   " ..
+loop
+    put skip, "Enter any integer to find the times table for it (Enter '0' when done): " ..
+    get answer
+    if strintok (answer) = false then
+	put "Invalid integer."
+    else
+	answer2 := strint (answer)
+    end if
+    exit when strintok (answer)
+end loop
+if strintok (answer) then
+    for count : 1 .. MULTIPLY
+	put count * strint (answer), "   " ..
     end for
 end if
+
