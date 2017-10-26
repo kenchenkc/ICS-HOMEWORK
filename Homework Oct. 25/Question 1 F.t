@@ -6,10 +6,8 @@ loop
     put "Enter a word (Enter 'done' when done): " ..
     get word
     exit when word = "done" or word = "Done"
-    if length (word) > length (new_word) then
-	totaltimes += 1
-	totalletters += length (word)
-    end if
+    totaltimes += 1
+    totalletters += length (word)
 end loop
 put "The average length of each word is ", totalletters / totaltimes, "."
 
