@@ -1,12 +1,15 @@
 var word : string
 var new_word : string := ""
-put "Enter a new word: " ..
+var number : int
+put "Enter a word: " ..
 get word
 for count : 1 .. length (word)
-    if index ("aeiou", word (count)) not= 0 then
-	new_word += "%"
+    if index ("r", word (count)) not= 0 then
+	number := ord (word (count))
+	number := number - ord ("r") + ord ("R")
+	new_word += chr (number)
     else
 	new_word += word (count)
     end if
 end for
-put "Your new word is ", new_word, "."
+put new_word
