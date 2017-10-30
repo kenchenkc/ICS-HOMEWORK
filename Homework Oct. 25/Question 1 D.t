@@ -1,9 +1,9 @@
 var word : string
 var new_word : string := ""
 loop
-    put "Enter a word (Enter 'done' when done): " ..
+    put "Enter a word (Enter 'D' when done): " ..
     get word
-    exit when word = "done"
+    exit when word = "D" or word = "d"
     for count : 1 .. length (word)
 	if length (word) > length (new_word) then
 	    new_word := word
