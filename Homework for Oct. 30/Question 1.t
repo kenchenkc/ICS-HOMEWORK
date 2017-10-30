@@ -8,7 +8,9 @@ for count : 1 .. 5
 	if length (word) not= number then
 	    put "Error. That is not the required length."
 	end if
+	if strintok (word) = true then
+	    put "No numbers in words."
+	end if
 	exit when length (word) = number
     end loop
 end for
-
