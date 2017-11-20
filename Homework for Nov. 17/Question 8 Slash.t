@@ -1,9 +1,7 @@
 procedure reduce (number1 : int, number2 : int)
     for decreasing count : number1 * number2 .. 1
 	if number1 mod count = 0 and number2 mod count = 0 then
-	    put number1 / count
-	    put "      --"
-	    put "      ", number2 / count
+	    put number1 / count, "/", number2 / count
 	    exit
 	end if
     end for
