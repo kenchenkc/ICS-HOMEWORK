@@ -1,5 +1,5 @@
 import GUI
-GUI.SetBackgroundColour (darkgray)
+GUI.SetBackgroundColour (gray)
 Window.Set (defWinId, "title:TEMPERATURE CONVERTER 1000")
 var textin : int
 var textout : int
@@ -52,8 +52,8 @@ procedure pro2 (input : string)
     if not (strrealok (input)) then
 	GUI.SetText (textin, "Error. Enter a number.")
     else
-	new_input := (strreal (input) - 32) * 5 / 9 
-	output := realstr (new_input, 0) 
+	new_input := (strreal (input) - 32) * 5 / 9
+	output := realstr (new_input, 0)
 	GUI.SetText (textin, output)
     end if
 end pro2
@@ -64,10 +64,10 @@ end out
 textin := GUI.CreateTextField (10, 220, 200, "", pro1)
 labelin := GUI.CreateLabel (10, 230 + GUI.GetHeight (textin), "CELSIUS:")
 textout := GUI.CreateTextField (430, 220, 200, "", pro2)
-labelout := GUI.CreateLabel (430, 230 + GUI.GetHeight (textout), "FARENHEIT:")
-quitbutton := GUI.CreateButton (279, 216, 80, "Quit", out)
+labelout := GUI.CreateLabel (430, 230 + GUI.GetHeight (textout), "FAHRENHEIT:")
+quitbutton := GUI.CreateButton (279, 130, 80, "Quit", out)
 ConvertToC := GUI.CreateButton (498, 180, 80, "Convert To Celsius", convertoc)
-ConvertToF := GUI.CreateButton (10, 180, 80, "Convert To Farenheit", convertof)
+ConvertToF := GUI.CreateButton (10, 180, 80, "Convert To Fahrenheit", convertof)
 loop
     exit when GUI.ProcessEvent
 end loop
