@@ -6,7 +6,7 @@ var change : int
 procedure pro1 (word : string)
     var new_word : string := ""
     for count : 1 .. length (word)
-	if ord (word (count)) > ord ("a") and ord (word (count)) < ord ("z") then
+	if word (count) >= "a" and word (count) <= "z" then
 	    new_word += chr (ord (word (count)) - ord ("a") + ord ("A"))
 	else
 	    new_word += word (count)
@@ -19,7 +19,7 @@ procedure pro2 (input : string)
     var new_word : string := ""
     var word : string := GUI.GetText (textin)
     for count : 1 .. length (word)
-	if ord (word (count)) > ord ("a") and ord (word (count)) < ord ("z") then
+	if word (count) > "a" and word (count) < "z" then
 	    new_word += chr (ord (word (count)) - ord ("a") + ord ("A"))
 	else
 	    new_word += word (count)
@@ -32,7 +32,7 @@ procedure probutton
     var word : string := GUI.GetText (textin)
     var new_word : string := ""
     for count : 1 .. length (word)
-	if ord (word (count)) > ord ("a") and ord (word (count)) < ord ("z") then
+	if word (count) > "a" and word (count) < "z" then
 	    new_word += chr (ord (word (count)) - ord ("a") + ord ("A"))
 	else
 	    new_word += word (count)
